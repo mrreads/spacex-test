@@ -4,6 +4,8 @@
     justify-content: center;
     align-items: center;
 
+    min-height: 185px;
+    min-width: 185px;
     //cursor: pointer;
     opacity: .75;
     //background-color: rgba($color: #FFFFFF, $alpha: 0.01);
@@ -16,6 +18,7 @@
         width: 100%;
         opacity: .3;
         transition: .3s all ease-in;
+        z-index: -1;
     }
     &:hover {
         & .background {
@@ -127,5 +130,26 @@
     }
     &[data-hover=bottom-left] .background {
         background: linear-gradient(4deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 40%,rgba(255,255,255,0.1) 100%);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .feature {
+        & div.background {
+            opacity: 1;
+            background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 76%, rgba(255,255,255,.3) 100%) !important;
+            border: 1px solid rgba($color: #989393, $alpha: 0.2);
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .feature {
+        & .top, & .center, & .bottom {
+            //color: #111923;
+        }
+        & div.background {
+            background-color: rgba($color: #150a01, $alpha: 0.6) !important;
+        }
     }
 }

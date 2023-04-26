@@ -53,31 +53,34 @@ a {
 }
 
 @media screen and (max-width: 1440px) {
+  .main {
+    background-position: top center;
+  }
   .container {
-    padding: 45px;
+    padding: 0 45px;
   }
 }
 
 @media screen and (max-width: 920px) {
   .container {
-      padding: 40px;
+      padding: 0 40px;
   }
 }
 
 @media screen and (max-width: 768px) {
   ul, ol {
-    margin-left: 10px;
+    margin-left: 0 10px;
   }
 }
 
 @media screen and (max-width: 680px) {
   .container {
-      padding: 25px;
+      padding: 0 25px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .container {
-      padding: 15px;
+      padding: 0 15px;
   }
 }

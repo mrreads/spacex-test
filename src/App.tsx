@@ -22,7 +22,7 @@ function App() {
 
             <div className={styles.center}>
               <div className={styles.planet} />
-              <Parallax speed={15}>
+              <Parallax speed={5}>
                 <div className={styles.rocketWrapper}>
                   <div className={styles.button}>
                     <div className={styles.borderOne} />

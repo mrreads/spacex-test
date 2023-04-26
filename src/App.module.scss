@@ -42,8 +42,10 @@
         & .rocketWrapper {
             position: absolute;
             left: -100%;
-            transform: translateX(-50px);
+            transform: translateX(-40px);
             bottom: 0;
+
+            margin-top: -25px;
 
             display: flex;
             flex-flow: row nowrap;
@@ -54,6 +56,7 @@
                 background-image: url('./../src/assets/images/rocket.png');
                 background-position: center;
                 background-size: contain;
+                background-repeat: no-repeat;
             }
 
             & .lines {
@@ -62,7 +65,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 0;
-                margin-top: -17px;
+                margin-top: -15px;
                 margin-right: -20px;
             }
             & .line1, & .line2 {
@@ -237,5 +240,170 @@
     }
     100% {
         transform: rotate(360deg)
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .content {
+        display: grid;
+        grid-template-areas:    "l c"
+                                "r r";
+
+        justify-content: center;
+        //align-items: center;
+
+        & .left {
+            grid-area: l;
+        }
+        & .center {
+            grid-area: c;
+        }
+        & .right {
+            grid-area: r;
+
+            & .features {
+                grid-template-columns: 185px 185px 185px 185px;
+                grid-template-rows: 185px;
+                margin-top: 150px;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        & .right {
+            & .features {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 185px 185px;
+            }
+        }
+        .center {
+            & .planet {
+                margin-top: 50px;
+                width: 350px;
+                height: 350px;
+            }
+            & .rocketWrapper {
+                transform: translateX(-100px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .content {
+        .center {
+            & .planet {
+                margin-top: 50px;
+                width: 250px;
+                height: 250px;
+            }
+            & .rocketWrapper {
+                
+                //transform: translateX(-215px);
+                & .line2 {
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        grid-template-areas:    "l l"
+                                "c c"
+                                "r r";
+
+        & .center {
+            & .planet {
+                margin-left: 275px;
+            }
+            & .rocketWrapper {
+                left: 0;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .content {
+        .center {
+            & .planet {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        & .right {
+            & .features {
+                grid-template-columns: 1fr;
+                grid-template-rows: 185px 185px 185px 185px;
+            }
+        }
+
+        & .left {
+            & .title {
+                text-align: center;
+                font-size: 12vw;
+            }
+        }
+        & .center {
+            margin-top: 75px;
+            & .planet {
+                margin-left: auto;
+                width: 150px;
+                height: 150px;
+            }
+            & .rocketWrapper {
+                & .line2 {
+                    width: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content {
+        & .center {
+            & .planet {
+                width: 125px;
+                height: 125px;
+            }
+            & .rocketWrapper {
+                width: 100%;
+                display: grid;
+                grid-template-areas:    "b b"
+                                        "l r";
+            }
+            & .button {
+                width: 100%;
+                margin-top: 100px;
+                margin-bottom: 15px;
+                grid-area: b;
+                text-align: center;
+
+                & .borderOne, & .borderTwo {
+                    display: none;
+                }
+            }
+            & .lines {
+                grid-area: l;
+            }
+            & .rocket {
+                grid-area: r;
+            }
+        }
     }
 }
