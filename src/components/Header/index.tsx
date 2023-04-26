@@ -1,9 +1,8 @@
-import Logo from '@/assets/images/logo.png';
-
-import styles from './Header.module.scss';
 import { useEffect, useRef, useState } from 'react';
-
 import useOnClickOutside from "@/hooks/useOnClickOutside";
+
+import logo from '@/assets/images/logo.png';
+import styles from './Header.module.scss';
 
 export default function Header() {
     const MOBILE_WIDTH = 1200;
@@ -27,7 +26,7 @@ export default function Header() {
 
                 <a className={styles.logo} href="#">
                     <div className={styles.borderOne} />
-                    <img src={Logo} alt='Логотип' />
+                    <img src={logo} alt='Логотип' />
                     <div className={styles.borderTwo} />
                 </a>
 

@@ -1,10 +1,10 @@
-import Header from "./components/Header";
-
-import styles from './App.module.scss';
-import Feature from "./components/Feature";
-import Spacer from "./components/Spacer";
-
 import { Parallax } from 'react-scroll-parallax';
+
+import Header from "@/components/Header";
+import Feature from "@/components/Feature";
+import Spacer from "@/components/Spacer";
+
+import styles from '@/App.module.scss';
 
 function App() {
   return (
