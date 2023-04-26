@@ -1,0 +1,71 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 70px;
+
+    .left {
+        margin-top: 50px;
+        & .title, & .subtitle {
+            color: #FFFFFF;
+
+            position: relative;
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                mix-blend-mode: darken;
+                background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 184, 162) 40%, rgb(255 60 0) 100%);
+                pointer-events: none;
+            }
+        }
+        & .title {
+            font-weight: 700;
+            font-size: 58px;
+        }
+        & .subtitle {
+            margin-top: -5px;
+            font-size: 25px;
+        }
+    }
+
+    .center {
+        & .planet {
+            background-image: url('./../src/assets/images/planet.png');
+            background-position: center;
+            background-size: contain;
+
+            width: 400px;
+            height: 400px;
+
+            margin-left: -50px;
+            animation: 120s reverse rotate infinite linear;
+            user-select: none;
+        }
+        z-index: 5;
+    }
+
+    .right {
+        margin-left: 25px;
+    }
+}
+
+.features {
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: 185px 185px;
+    grid-template-rows: 185px 185px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
