@@ -24,6 +24,7 @@
     }
 
     .center {
+        position: relative;
         & .planet {
             background-image: url('./../src/assets/images/planet.png');
             background-position: center;
@@ -37,6 +38,184 @@
             user-select: none;
         }
         z-index: 5;
+
+        & .rocketWrapper {
+            position: absolute;
+            left: -100%;
+            transform: translateX(-50px);
+            bottom: 0;
+
+            display: flex;
+            flex-flow: row nowrap;
+            & .rocket {
+                height: 120px;
+                width: 50px;
+
+                background-image: url('./../src/assets/images/rocket.png');
+                background-position: center;
+                background-size: contain;
+            }
+
+            & .lines {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+                margin-top: -17px;
+                margin-right: -20px;
+            }
+            & .line1, & .line2 {
+                height: 1px;
+                
+            }
+            & .line1 {
+                width: 70px;
+                transform: rotate(45deg);
+                margin-top: -50px;
+                margin-right: -10px;
+
+                background: linear-gradient(135deg, rgba(255,255,255,0) 0%, 75%,rgba(255,255,255,0.5) 100%);
+            }
+            & .line2 {
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, 50%, rgb(255, 255, 255) 100%);
+                width: 300px;
+                flex-grow: 1;
+
+                position: relative;
+                &::after {
+                    position: absolute;
+                    right: -7px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    content: '';
+                    height: 6px;
+                    width: 6px;
+                    border: 1px solid #FFFFFF;
+                    border-radius: 100%;
+                    background-color: transparent;
+                }
+            }
+
+            & .button {
+                cursor: pointer;
+                margin-top: -10px;
+                margin-right: -5px;
+                align-self: flex-start;
+                background-color: rgba($color: #16151d, $alpha: .5);
+                padding: 10px 25px;
+                color: #FFFFFF;
+                font-size: 14px;
+                font-weight: 100;
+
+                position: relative;
+                & .borderOne, & .borderTwo, & .lineOne, & .lineTwo {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    &::after, &::before {
+                        transition: .2s ease-out;
+                    }
+                }
+                & .borderTwo {
+                    transform: rotate(180deg);
+                }
+                & .borderOne {
+                    &::after, &::before {
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 1px;
+                        background-color: #FFFFFF;
+                    }
+                    &::after {
+                        width: 4%;
+                    }
+                    &::before {
+                        height: 23%;
+                    }
+                }
+                & .borderTwo {
+                    &::after, &::before {
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 1px;
+                        background-color: #FFFFFF;
+                    }
+                    &::after {
+                        width: 4%;
+                    }
+                    &::before {
+                        height: 23%;
+                    }
+                }
+                &:hover {
+                    & .borderOne, & .borderTwo {
+                        &::after, &::before {
+                            transition: .6s ease-in-out;
+                        }
+                    }
+                    & .borderOne::after, & .borderTwo::after {
+                        width: 75%;
+                    }
+                    & .borderOne::before, & .borderTwo::before {
+                        height: 75%;
+                    }
+                }
+                
+                & .lineOne, & .lineTwo {
+                    &::after, &::before {
+                        opacity: 0.8;
+                        left: 0;
+                        bottom: 0;
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 1px;
+                        background-color: #23599c;
+                        transition: .3s all ease-out;
+                    }
+                    &:hover {
+                        &::after, &::before {
+                            transition: .6s all ease-in;
+                            opacity: 1;
+                        }
+                    }
+                    &::after {
+                        height: 100%;
+                    }
+                    &::before {
+                        width: 100%;
+                    }
+                }
+                & .lineTwo {
+                    &::after, &::before {
+                        left: unset;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+                & .lineOne {
+                    &::after {
+                        background: linear-gradient(175deg, rgba(255,255,255,0) 0%, 35%,#23599c 100%);
+                    }
+                    &::before {
+                        background: linear-gradient(270deg, rgba(255,255,255,0) 0%, 50%,#23599c 100%);
+                    }
+                }
+                & .lineTwo {
+                    &::after {
+                        background: linear-gradient(360deg, rgba(255,255,255,0) 0%, 35%,#23599c 100%);
+                    }
+                    &::before {
+                        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, 50%,#23599c 100%);
+                    }
+                }
+            }
+        }
     }
 
     .right {
