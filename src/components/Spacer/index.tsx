@@ -4,4 +4,4 @@ export default function Spacer() {
             <h1> FREE SPACE FOR SCROLL </h1>
         </div>
     )
-}
+};
