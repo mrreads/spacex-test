@@ -12,6 +12,8 @@ export default function Feature({ topText, centerText, bottomText, hoverPosition
         <p className={styles.top}>{topText}</p>
         <p className={styles.center}>{centerText}</p>
         <p className={styles.bottom}>{bottomText}</p>
+
+        <div className={styles.background} />
     </div>
     )
 }

@@ -9,18 +9,9 @@
         & .title, & .subtitle {
             color: #FFFFFF;
 
-            position: relative;
-            &::after {
-                position: absolute;
-                content: '';
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                mix-blend-mode: darken;
-                background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 184, 162) 40%, rgb(255 60 0) 100%);
-                pointer-events: none;
-            }
+            background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 184, 162) 40%, rgb(255 60 0) 100%);;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         & .title {
             font-weight: 700;

@@ -1,5 +1,11 @@
 @font-face {
   font-family: "Museo Sans Cyrl";
   src: local("Museo Sans Cyrl 300"),
-        url('./../fonts/MuseoSansCyrl.ttf')  format('truetype'),;
+        url('./../fonts/MuseoSansCyrl-300.ttf')  format('truetype'),;
+}
+
+@font-face {
+  font-family: "Museo Sans Cyrl Bold";
+  src: local("Museo Sans Cyrl 700"),
+        url('./../fonts/MuseoSansCyrl-700.ttf')  format('truetype'),;
 }
