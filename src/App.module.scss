@@ -269,6 +269,7 @@
             grid-area: c;
         }
         & .right {
+            margin-left: 0;
             grid-area: r;
 
             & .features {
